@@ -1,0 +1,19 @@
+<div class="login" >
+    <h3>Login Form</h3>
+    <form #loginform="ngForm" (ngSubmit)="myfunction(loginform)">
+        <label for="mail" >Email Id:</label>
+    <input type="text" placeholder="xyz@gmail.com" id="mail" ngModel name="email" #email required>
+    <br><br>
+    <label for="pwd" >Password:</label>
+    <input type="text" placeholder="atleast 8 characters" id="pwd" ngModel name="password" #password required>
+    <br><br>
+    <button type="submit" class="log">Login</button>
+    </form>
+    <a routerLink="registerform">Click here for Signup</a>
+    </div>
+
+    
+    <router-outlet></router-outlet>
+    <app-mainpage [msg]="senddatavalue" (msgEvent)="outputdecoratorreceiver($event)"></app-mainpage> 
+    
+    <p>{{receiver}}</p>
